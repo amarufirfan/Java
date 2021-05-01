@@ -1,0 +1,36 @@
+package prademy2.day6;
+
+import java.util.Scanner;
+
+public class HitungKarakterDenganMethod {
+	public static void main(String[] args) {
+		HitungKarakterDenganMethod hk = new HitungKarakterDenganMethod();
+		hk.olahKalimat();
+		
+	}
+	
+	public String getKalimat() {
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Masukkan kalimat : ");
+		String kalimat = keyboard.nextLine();
+		keyboard.close();
+		
+		return kalimat;
+	}
+	
+	public void olahKalimat() {
+		char[] kalimat = getKalimat().toCharArray();
+		for (int i = 0; i < kalimat.length; i++) {
+
+			String kata = "";
+
+			while (i < kalimat.length && kalimat[i] != ' ') {
+				kata = kata + kalimat[i];
+				i++;
+			}
+
+			if (kata.length() > 0)
+			System.out.println("Panjang kata " + kata + " : " + kata.length());			
+		}
+	}
+}
